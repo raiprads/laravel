@@ -6,7 +6,7 @@
 	@foreach($cards as $card)
 		<div>
 			
-			{{ $card->title }}
+			<a href="{{ $card->path() }}">{{ $card->title }}</a>
 
 		</div>
 	@endforeach

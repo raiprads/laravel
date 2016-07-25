@@ -2,17 +2,23 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
 
         <title>Laravel</title>
 
-        <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
         @yield('header')
     
     </head>
     <body>
     
-        @yield('content')
+        <div class="container">
+
+            @yield('content')
+
+        </div>
+
 
         @yield('footer')
 

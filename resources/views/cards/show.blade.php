@@ -30,11 +30,11 @@
 			<h3>Add New Note</h3>
 
 			<form method="POST" action="/cards/{{ $card->id }}/notes">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			{{ csrf_field() }}
 
 				<div class="form-group">
 
-					<textarea name="body" class="form-control"></textarea>	
+					<textarea name="body" class="form-control">{{ old('body') }}</textarea>	
 
 				</div>
 
@@ -45,6 +45,15 @@
 				</div>
 
 			</form>
+
+			
+			@if(count($errors))
+				<ul>
+					@foreach($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			@endif
 
 		</div>
 

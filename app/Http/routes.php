@@ -34,7 +34,10 @@ Route::group(['middlewareGroups' => ['web']], function(){
 
 	Route::get('notes/{note}/edit', 'NotesController@edit');
 
-	Route::patch('notes/{note}','NotesController@update');	
+	Route::patch('notes/{note}','NotesController@update');
+
+	Route::auth();
+
+	Route::get('/dashboard','HomeController@index');
 
 });
-

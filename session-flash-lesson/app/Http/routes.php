@@ -28,11 +28,11 @@ Route::group(['middlewareGroups' => ['web']], function(){
 
 	});
 
-	Route::get('/', function () {
+	// Route::get('/', function (RegisteredUsers $registration) {
 	    
-		
+	// 	var_dump($registration);
 
-	    return view('welcome');
-	});
+	//     //return view('welcome');
+	// });
 
 });
